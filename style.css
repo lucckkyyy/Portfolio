@@ -112,6 +112,54 @@ nav {
 .nav-right a:hover:after { width: 100%; }
 
 /* About Section */
+.role:hover span:not(.role-slash) {
+  display: inline-block;
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ===== NEW INTRO STYLES ===== */
+.intro-greeting h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.role-slash {
+  color: rgba(210, 180, 140, 0.4);
+  padding: 0 0.5rem;
+}
+
+.intro-pitch .lead {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.intro-pitch .lead::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3px;
+  width: 1rem;
+  background: var(--accent);
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
