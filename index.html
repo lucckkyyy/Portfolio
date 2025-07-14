@@ -17,35 +17,31 @@
   <!-- Main Content -->
   <main>
     <nav>
-      <div class="nav-container">
-        <div class="nav-left">
-          <span class="accent">AR</span>
-        </div>
-        <div class="nav-right">
-          <a href="#about">About Me</a>
-          <a href="#education">Education</a>
-          <a href="#work">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#achievements">Achievements</a>
-          <a href="#contact">Contact Me</a>
-        </div>
+      <div class="nav-left">
+        <span class="accent">AR</span>
+      </div>
+      <div class="nav-right">
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact Me</a>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="section hero-section">
-      <div class="section-container">
-        <div class="hero-content">
-          <div class="hello-imagination">
-            <div class="hello-world-text">Hello,</div>
-            <div class="name-text">I am <span class="name-highlight">Aryan Rajguru</span>,</div>
-            <div class="role-text accent">an IT Specialist with a passion for Software Development and IT Management.</div>
-          </div>
+      <div class="hero-content">
+        <div class="hello-imagination">
+          <div class="hello-world-text">Hello,</div>
+          <div class="name-text">I am <span class="name-highlight">Aryan Rajguru</span>,</div>
+          <div class="role-text accent">an IT Specialist with a passion for Software Development and IT Management.</div>
         </div>
       </div>
     </section>
 
-      <!-- About Section -->
+     <!-- About Section -->
     <section id="about" class="section about-section">
       <div class="section-container">
         <div class="about-container">
@@ -60,29 +56,102 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Education Section -->
     <section id="education" class="section">
-      <div class="section-container">
-        <h2>Education</h2>
-        <div class="education-container">
-          <div class="education-main">
-            <h3>The University of Toledo <span class="accent">| Anticipated May 2027</span></h3>
-            <p>B.S. in Computer Science and Engineering Technology</p>
-          </div>
-          <div class="education-highlights">
-            <h3>Key Highlights</h3>
-            <ul>
-              <li>Dean's List recipient</li>
-              <li>AI/ML Club & ACM Chapter member</li>
-              <li>Amazon DeepRacer AI/ML Competition representative</li>
-            </ul>
-          </div>
+      <h2>Education</h2>
+      <div class="education-container">
+        <div class="education-main">
+          <h3>The University of Toledo <span class="accent">| Anticipated May 2027</span></h3>
+          <p>B.S. in Computer Science and Engineering Technology</p>
+        </div>
+        <div class="education-highlights">
+          <h3>Key Highlights</h3>
+          <ul>
+            <li>Dean's List recipient</li>
+            <li>AI/ML Club & ACM Chapter member</li>
+            <li>Amazon DeepRacer AI/ML Competition representative</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- Other sections... -->
+    <!-- Experience Section -->
+    <section id="work" class="section">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>IT Assistant <span class="accent">@ University of Toledo</span></h3>
+          <p class="date">2022 - Present</p>
+          <ul>
+            <li>Reduced ticket backlog by 40%</li>
+            <li>Decreased escalations by 50%</li>
+            <li>Hardware/software deployment</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>TaskSync</h3>
+          <p class="tech">Flutter • Firebase</p>
+          <p>Cross-platform task manager with real-time sync</p>
+        </div>
+        <div class="project-card">
+          <h3>AI Car Robot</h3>
+          <p class="tech">TensorFlow • OpenCV</p>
+          <p>95% obstacle detection accuracy</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section">
+      <h2>Achievements</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>AWS Solutions Architecture</li>
+            <li>Generative AI</li>
+            <li>Front-End Development</li>
+          </ul>
+        </div>
+        <div class="achievement-card">
+          <h3>Awards</h3>
+          <ul>
+            <li>Dean's List</li>
+            <li>Rocket Award Scholarship</li>
+            <li>Amazon DeepRacer</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2>Get in Touch</h2>
+      <h3>Let's start a conversation!</h3>
+      <div class="contact-container">
+        <form class="contact-form" action="https://formspree.io/f/mkgbebko" method="POST">
+          <input type="hidden" name="_gotcha" style="display:none">
+          <input type="hidden" name="_next" value="https://aryanrajguru.com/thank-you.html">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="_replyto" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <div class="contact-info">
+          <p><span class="accent">LinkedIn:</span> <a href="https://linkedin.com/in/aryanrajguru" target="_blank" class="clean-link">linkedin.com/in/aryanrajguru</a></p>
+          <p><span class="accent">Email:</span> <a href="mailto:aryanrajguru.2016@gmail.com" class="clean-link">aryanrajguru.2016@gmail.com</a></p>           
+          <p><span class="accent">Phone:</span> (937) 243-5219</p>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
