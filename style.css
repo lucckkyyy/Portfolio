@@ -30,6 +30,60 @@ body {
   z-index: 100;
   animation: fadeOut 0.8s 1.5s forwards;
 }
+/* ===== ZOOM & SPACING ADJUSTMENTS ===== */
+/* Add this to the VERY END of your existing CSS */
+
+body {
+  zoom: 0.9; /* Slightly zooms out entire page */
+}
+
+.hero-section {
+  min-height: 85vh !important; /* Reduces hero height */
+  padding: 0 10% !important; /* Adds more side space */
+}
+
+.about-container {
+  gap: 2rem !important; /* Reduces gap between text and photo */
+  max-width: 1200px !important; /* Makes content area narrower */
+}
+
+.profile-image {
+  max-width: 500px !important; /* Makes photo slightly smaller */
+}
+
+/* Text size adjustments */
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  margin-bottom: 1rem !important;
+}
+
+.about-text h2 {
+  font-size: 2.2rem !important;
+}
+
+.about-text p {
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  body {
+    zoom: 1 !important; /* Reset zoom on tablets */
+  }
+  .hero-section {
+    min-height: 75vh !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 1.8rem !important;
+  }
+  .about-text h2 {
+    font-size: 1.8rem !important;
+  }
+}
 
 .hello-world {
   font-size: 5vw;
