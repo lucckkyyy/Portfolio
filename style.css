@@ -46,8 +46,6 @@ body {
   animation: grow 1s 0.5s forwards;
 }
 
-
-
 @keyframes fadeIn { to { opacity: 1; } }
 @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
 @keyframes grow { to { width: 20vw; } }
@@ -83,6 +81,8 @@ h3 {
 }
 
 .accent { color: var(--accent); }
+
+.aryan-name { color: #FF5733; } /* Custom color for name */
 
 /* Navigation */
 nav {
@@ -124,7 +124,6 @@ nav {
   50% { transform: translateY(-5px); }
 }
 
-/* ===== NEW INTRO STYLES ===== */
 .intro-greeting h2 {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   margin-bottom: 0.5rem;
@@ -136,30 +135,6 @@ nav {
   color: var(--accent);
   margin-bottom: 2rem;
   display: inline-block;
-}
-
-.role-slash {
-  color: rgba(210, 180, 140, 0.4);
-  padding: 0 0.5rem;
-}
-
-.intro-pitch .lead {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.intro-pitch .lead::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 3px;
-  width: 1rem;
-  background: var(--accent);
 }
 
 .about-grid {
@@ -298,11 +273,6 @@ nav {
 
 .contact-form textarea { min-height: 150px; }
 
-.contact-form ::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-  font-family: 'Space Grotesk', sans-serif;
-}
-
 .submit-btn {
   background: transparent;
   color: var(--accent);
@@ -313,17 +283,9 @@ nav {
   align-self: flex-start;
 }
 
-.thank-you-message {
-  text-align: center;
-  margin: 100px auto;
-  padding: 20px;
-  max-width: 500px;
-  border: 1px solid #D2B48C; /* Tan color */
-}
-
 .submit-btn:hover { background: rgba(210, 180, 140, 0.1); }
 
-/* Clean Link Style (for email and LinkedIn) */
+/* Clean Link Style */
 .clean-link {
   color: var(--white);
   text-decoration: none;
