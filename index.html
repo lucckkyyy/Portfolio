@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aryan Rajguru - IT Specialist</title>
+  <title>Aryan Rajguru</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap">
 </head>
@@ -16,7 +16,7 @@
 
   <!-- Main Content -->
   <main>
-    <nav>
+    <nav class="fade-in">
       <div class="nav-left">
         <span class="accent">AR</span>
       </div>
@@ -30,28 +30,19 @@
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="section hero-section">
-      <div class="hero-content">
-        <div class="hello-imagination">
-          <div class="hello-world-text">Hello,</div>
-          <div class="name-text">I am <span class="name-highlight">Aryan Rajguru</span>,</div>
-          <div class="role-text accent">an IT Specialist with a passion for Software Development and IT Management.</div>
-        </div>
-      </div>
-    </section>
-
     <!-- About Section -->
-    <section id="about" class="section about-section">
-      <div class="about-container">
-        <div class="about-image">
-          <img src="AryanOttawaPark.jpg" alt="Aryan Rajguru" class="profile-image">
-        </div>
+    <section id="about" class="section">
+      <div class="about-grid">
         <div class="about-text">
           <h2>About Me</h2>
-          <p>As a Computer Science Student and an IT Specialist, I manage enterprise systems like SCCM, VMware VDI, and Active Directory, supporting over 12,000 users and resolving critical issues efficiently. I am currently pursuing a B.S. in Computer Science and Engineering Technology at the University of Toledo, set to graduate summa cum laude in May 2025, and I am dedicated to leveraging my skills to develop secure, scalable, and intelligent IT systems.</p>
-          <a href="LuckyResume(1).pdf" download="Aryan Rajguru Resume.pdf" class="resume-btn">Download Resume</a>
+          <h3>Who Am I?</h3>
+          <p>Hi, I am Aryan, a Computer Science and Engineering Student and an IT Specialist with a passion for software development and IT Management.</p>
+          <p>With experience in full-stack development and machine learning, I thrive at the intersection of technology and problem-solving.</p>
+          <a href="LuckyResume(1).pdf" download="Resume.pdf" class="resume-btn">Download Resume</a>
         </div>
+        <div class="about-photo">
+  <img src="AryanOttawaImage.jpg" alt="Aryan Rajguru" class="profile-image">
+</div>
       </div>
     </section>
 
@@ -136,20 +127,50 @@
       <h3>Let's start a conversation!</h3>
       <div class="contact-container">
         <form class="contact-form" action="https://formspree.io/f/mkgbebko" method="POST">
-          <input type="hidden" name="_gotcha" style="display:none">
-          <input type="hidden" name="_next" value="https://aryanrajguru.com/thank-you.html">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="_replyto" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit" class="submit-btn">Send Message</button>
+        <input type="hidden" name="_gotcha" style="display:none">
+        <input type="hidden" name="_next" value="https://aryanrajguru.com/thank-you.html">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
         </form>
         <div class="contact-info">
           <p><span class="accent">LinkedIn:</span> <a href="https://linkedin.com/in/aryanrajguru" target="_blank" class="clean-link">linkedin.com/in/aryanrajguru</a></p>
           <p><span class="accent">Email:</span> <a href="mailto:aryanrajguru.2016@gmail.com" class="clean-link">aryanrajguru.2016@gmail.com</a></p>           
           <p><span class="accent">Phone:</span> (937) 243-5219</p>
+          <p><span class="accent">Location:</span> Toledo, OH</p>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+    // Scroll reveal animation
+    const sections = document.querySelectorAll('.section');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Hover effects
+    document.querySelectorAll('.project-card, .achievement-card, .timeline-item').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-5px)';
+        item.style.boxShadow = '0 10px 20px rgba(210, 180, 140, 0.1)';
+      });
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = 'none';
+      });
+    });
+  </script>
 </body>
 </html>
