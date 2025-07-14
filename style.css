@@ -1,10 +1,9 @@
-/* Base Styles */
 :root {
   --black: #000000;
-  --accent: #D2B48C; /* Tan */
+  --accent: #D2B48C;
   --cream: #F5F5DC;
   --white: #FFFFFF;
-  --name-color: #20B2AA; /* Teal */
+  --name-color: #20B2AA;
 }
 
 * {
@@ -19,58 +18,18 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   line-height: 1.6;
   overflow-x: hidden;
+  padding-top: 60px;
 }
-
-/* Layout Containers */
-.section-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Intro Animation */
-.intro-animation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--black);
-  z-index: 100;
-  animation: fadeOut 0.8s 1.5s forwards;
-}
-
-.hello-world {
-  font-size: 4vw;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  opacity: 0;
-  animation: fadeIn 0.8s 0.2s forwards;
-  color: var(--accent);
-}
-
-.intro-line {
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  animation: grow 1s 0.5s forwards;
-}
-
-@keyframes fadeIn { to { opacity: 1; } }
-@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
-@keyframes grow { to { width: 15vw; } }
 
 /* Navigation */
 nav {
+  position: fixed;
+  top: 0;
   width: 100%;
-  padding: 20px 0;
-  position: relative;
-  z-index: 10;
+  background-color: var(--black);
+  z-index: 1000;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--accent);
 }
 
 .nav-container {
@@ -89,28 +48,30 @@ nav {
 
 .nav-right {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 .nav-right a {
   color: var(--white);
   text-decoration: none;
-  position: relative;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
-.nav-right a:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 1px;
-  bottom: -3px;
-  left: 0;
-  background: var(--accent);
-  transition: width 0.3s;
+.nav-right a:hover {
+  color: var(--accent);
 }
 
-.nav-right a:hover:after {
+/* Sections */
+.section-container {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
 }
 
 /* Hero Section */
@@ -118,7 +79,6 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 100px 0;
 }
 
 .hero-content {
@@ -126,19 +86,15 @@ nav {
   text-align: center;
 }
 
-.hello-imagination {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 .hello-world-text {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: 2rem;
+  margin-bottom: 15px;
 }
 
 .name-text {
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: 4rem;
   font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .name-highlight {
@@ -146,67 +102,47 @@ nav {
 }
 
 .role-text {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: 1.8rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
 /* About Section */
-.about-section {
-  padding: 80px 0;
-}
-
 .about-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: center;
 }
 
-.about-image {
-  display: flex;
-  justify-content: center;
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+  color: var(--accent);
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
 }
 
 .profile-image {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  max-width: 500px;
   border-radius: 8px;
   border: 2px solid var(--accent);
   box-shadow: 0 5px 20px rgba(210, 180, 140, 0.2);
 }
 
-.about-text h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: var(--accent);
-  position: relative;
-}
-
-.about-text h2:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  width: 50px;
-  height: 2px;
-  background: var(--accent);
-}
-
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 25px;
-}
-
 .resume-btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 12px 25px;
   background: transparent;
   color: var(--accent);
   border: 2px solid var(--accent);
   text-decoration: none;
-  font-weight: 600;
+  font-size: 1.1rem;
   transition: all 0.3s;
 }
 
@@ -214,85 +150,42 @@ nav {
   background: rgba(210, 180, 140, 0.1);
 }
 
-/* Education Section */
-.education-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.education-highlights {
-  padding-left: 20px;
-  border-left: 1px solid var(--accent);
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 992px) {
-  .about-container,
-  .education-container {
+  .about-container {
     grid-template-columns: 1fr;
   }
-
-  .about-image {
-    order: -1;
-    margin-bottom: 40px;
-  }
-
-  .education-highlights {
-    padding-left: 0;
-    border-left: none;
-    border-top: 1px solid var(--accent);
-    padding-top: 20px;
+  
+  .profile-image {
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
+  .nav-right {
     gap: 15px;
   }
+  
+  .name-text {
+    font-size: 3rem;
+  }
+  
+  .role-text {
+    font-size: 1.4rem;
+  }
+}
 
+@media (max-width: 576px) {
   .nav-right {
     flex-wrap: wrap;
     justify-content: center;
   }
-
-  .hero-section {
-    padding: 80px 0;
+  
+  .name-text {
+    font-size: 2.5rem;
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
   }
 }
-/* Increased all font sizes */
-.hello-world {
-  font-size: 5vw; /* Increased from 4vw */
-}
-
-.hello-world-text {
-  font-size: clamp(1.8rem, 5vw, 3rem) !important; /* Increased */
-}
-
-.name-text {
-  font-size: clamp(2.5rem, 7vw, 5rem) !important; /* Increased */
-}
-
-.role-text {
-  font-size: clamp(1.5rem, 4vw, 2.2rem) !important; /* Increased */
-}
-
-.about-text h2 {
-  font-size: 2.5rem; /* Increased from 2.2rem */
-}
-
-.about-text p {
-  font-size: 1.2rem; /* Increased from 1.1rem */
-}
-
-.resume-btn {
-  font-size: 1.1rem; /* Increased */
-}
-
-/* Swapped image to right side */
-.about-container {
-  grid-template-columns: 1fr 1fr; /* Keep grid */
-}
-
-/* No need to change order property since we swapped HTML */
