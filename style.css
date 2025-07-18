@@ -426,6 +426,20 @@ nav {
   color: var(--accent);
 }
 
+/* Phone number styling - unique class to prevent conflicts */
+.Aryan-contact-phone {
+  color: var(--white) !important;
+  text-decoration: none !important;
+  pointer-events: none; /* Optional: prevents click behavior on mobile */
+}
+
+/* Extra protection against mobile styling */
+a[href^="tel"] .Aryan-contact-phone,
+.Aryan-contact-phone[href^="tel"] {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+
 /* Animations */
 .section {
   opacity: 0;
@@ -506,19 +520,3 @@ nav {
     scroll-behavior: auto !important;
   }
 }
-
-Thank you HTML
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Thank You!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="thank-you-message">
-    <h1>Thanks! 😊</h1>
-    <p>I got your message and will reply soon!</p>
-    <a href="/">← Go Back Home</a>
-  </div>
-</body>
-</html>
