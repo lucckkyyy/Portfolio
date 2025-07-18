@@ -423,20 +423,24 @@ nav {
 
 .clean-link:hover {
   text-decoration: underline;
-  color: var(--accent);
+  color: var(--white); /* Force white instead of --accent */
 }
 
-/* Phone number styling - unique class to prevent conflicts */
-.Aryan-contact-phone {
-  color: var(--white) !important;
-  text-decoration: none !important;
-  pointer-events: none; /* Optional: prevents click behavior on mobile */
+/* === Phone number link (update to match others) === */
+.rajguru-contact-phone-link {
+  color: var(--white);
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
-/* Extra protection against mobile styling */
-a[href^="tel"] .Aryan-contact-phone,
-.Aryan-contact-phone[href^="tel"] {
-  color: var(--white) !important;
+.rajguru-contact-phone-link:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* === Remove these entirely (redundant now) === */
+a[href^="tel"] {
+  color: inherit !important;
   text-decoration: none !important;
 }
 
