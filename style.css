@@ -228,12 +228,122 @@ nav {
   margin-top: 2rem;
   transition: all 0.3s;
   border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.4s;
+  z-index: -1;
 }
 
 .resume-btn:hover {
-  background: rgba(210, 180, 140, 0.1);
+  color: var(--black);
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(210, 180, 140, 0.3);
+}
+
+.resume-btn:hover::before {
+  width: 100%;
+}
+
+/* Experience Section */
+#work.section {
+  padding-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 1px solid rgba(210, 180, 140, 0.3);
+  margin-top: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 2.5rem 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -0.5rem;
+  top: 0.4rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(210, 180, 140, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover::before {
+  box-shadow: 0 0 0 6px rgba(210, 180, 140, 0.2);
+  transform: scale(1.1);
+}
+
+.timeline-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.timeline-item h3 .accent {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.timeline-item .date {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+  background: rgba(210, 180, 140, 0.1);
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.timeline-item ul {
+  padding-left: 1.5rem;
+  list-style-type: none;
+}
+
+.timeline-item li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
+
+.timeline-item li::before {
+  content: '▹';
+  position: absolute;
+  left: -1.5rem;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.timeline-item:hover {
+  transform: translateX(5px);
 }
 
 /* Education Section */
