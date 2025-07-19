@@ -481,16 +481,6 @@ nav {
   box-shadow: 0 5px 15px rgba(210, 180, 140, 0.1);
 }
 
-/* Add to your existing hover effects */
-.project-card:hover,
-.achievement-card:hover,
-.education-main:hover,
-.education-highlights:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(210, 180, 140, 0.1);
-  border-color: var(--accent);
-}
-
 /* Contact Section */
 .contact-container {
   display: grid;
