@@ -141,7 +141,7 @@ nav {
   transform: scale(1.02);
 }
 
-/* Shared button styles (used for resume and contact form) */
+/* ===== BUTTON STYLES (RESUME & SUBMIT) ===== */
 .resume-btn, .submit-btn {
   display: inline-block;
   padding: 0.8rem 1.5rem;
@@ -149,7 +149,7 @@ nav {
   color: var(--accent);
   border: 1px solid var(--accent);
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 0.4s ease; /* Changed from 0.3s to 0.4s to match submit-btn */
   border-radius: 50px;
   cursor: pointer;
   position: relative;
@@ -157,13 +157,14 @@ nav {
   z-index: 1;
 }
 
-/* Button hover effect */
+/* Unified hover effect for both buttons */
 .resume-btn:hover, .submit-btn:hover {
   color: var(--black);
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(210, 180, 140, 0.3);
 }
 
+/* Matching ::before animation speed (0.4s) */
 .resume-btn::before, .submit-btn::before {
   content: '';
   position: absolute;
@@ -172,7 +173,7 @@ nav {
   width: 0;
   height: 100%;
   background: var(--accent);
-  transition: width 0.4s;
+  transition: width 0.4s ease; /* Now identical for both buttons */
   z-index: -1;
 }
 
