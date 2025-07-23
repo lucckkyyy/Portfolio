@@ -62,7 +62,7 @@
           <h3>Key Highlights</h3>
           <ul>
             <li>Dean's List recipient</li>
-            <li>AI/ML Club & ACM Chapter member</li>
+            <li>AI/ML Club & ACM Club member</li>
           </ul>
         </div>
       </div>
@@ -74,7 +74,7 @@
       <div class="timeline">
         <div class="timeline-item">
           <h3>IT Assistant <span class="accent">@ University of Toledo</span></h3>
-          <p class="date">2022 - Present</p>
+          <p class="date">Dec 2024 - Present</p>
           <ul>
             <p>
               I manage software and hardware-related issues, configure and image computers, 
@@ -93,15 +93,25 @@
     <section id="projects" class="section">
       <h2>PROJECTS</h2>
       <div class="projects-grid">
-        <div class="project-card">
-          <h3>TaskSync</h3>
-          <p class="tech">Flutter • Firebase</p>
-          <p>Cross-platform task manager with real-time sync</p>
+            <div class="project-card">
+          <h3>TaskSync Reminder App</h3>
+          <p class="tech">I am developing a cross-platform task management app using Flutter and Firebase that
+            syncs tasks in real time across mobile, web, and desktop. I integrate cloud_firestore and flutter_local_notifications
+            to improve productivity with instant updates and reminders.</p>
         </div>
+
         <div class="project-card">
-          <h3>AI Car Robot</h3>
-          <p class="tech">TensorFlow • OpenCV</p>
-          <p>95% obstacle detection accuracy</p>
+          <h3>Email Classifier Web App</h3>
+          <p class="tech">I built a spam detection web app using Python and the Naïve Bayes algorithm, 
+            optimized with Pandas and NumPy. I deploy it with Streamlit for real-time classification, 
+            achieving 90% accuracy in detecting spam emails.</p>
+        </div>
+        
+        <div class="project-card">
+          <h3>AI Car Robot Model</h3>
+          <p class="tech">I implemented machine learning models with TensorFlow and use OpenCV for object detection
+            to create an autonomous navigation robot. The system successfully detects and avoids
+            obstacles with a 95% accuracy rate.</p>
         </div>
       </div>
     </section>
@@ -154,7 +164,6 @@
   <script>
     // Scroll reveal animation
     const sections = document.querySelectorAll('.section');
-    
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
