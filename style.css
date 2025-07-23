@@ -307,7 +307,7 @@ a[href="mailto:aryanrajguru.2016@gmail.com"] {
 
 .resume-btn:hover::before, 
 form.contact-form button.submit-btn:hover::before {
-  width: 100%;
+  width: 50%;
 }
 
 /* Click effect */
