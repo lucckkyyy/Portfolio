@@ -298,6 +298,22 @@ nav {
   min-height: 150px;
 }
 
+/* Force white color and hover underline for contact links */
+.contact-info a[href^="https://linkedin"],
+.contact-info a[href^="mailto:"],
+.contact-info a[href^="tel:"] {
+  color: var(--white) !important;
+  text-decoration: none !important;
+}
+
+.contact-info a[href^="https://linkedin"]:hover,
+.contact-info a[href^="mailto:"]:hover,
+.contact-info a[href^="tel:"]:hover {
+  text-decoration: underline !important;
+  text-decoration-color: var(--accent) !important;
+}
+
+
 /* Add these new rules at the end of your CSS */
 .contact-info a.clean-link,
 .contact-info a.rajguru-contact-phone-link {
@@ -319,6 +335,12 @@ nav {
   padding: 0.6rem 1.2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Add this to make submit button smaller */
+button.submit-btn {
+  padding: 0.6rem 1.2rem !important;
+  font-size: 0.9rem !important;
 }
 
 .section.visible {
