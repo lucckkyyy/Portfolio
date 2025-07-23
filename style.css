@@ -93,7 +93,7 @@ nav {
   top: 0;
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  -webkit-backdrop-filter: blur(10px);
   z-index: 100;
 }
 
@@ -134,18 +134,17 @@ nav {
   border: 2px solid var(--accent);
   box-shadow: 0 4px 20px rgba(210, 180, 140, 0.2);
   transition: transform 0.3s ease;
-  object-fit: cover; /* Prevent image distortion */
+  object-fit: cover;
 }
 
 .profile-image:hover {
   transform: scale(1.02);
 }
 
-/* ===== BUTTON STYLES (RESUME & SUBMIT) ===== */
-/* ADD these new button styles */
-.resume-btn, .submit-btn {
+/* ===== BUTTON STYLES ===== */
+.resume-btn {
   display: inline-block;
-  padding: 0.6rem 1.2rem; /* Smaller size */
+  padding: 0.8rem 1.5rem;
   background: transparent;
   color: var(--accent);
   border: 1px solid var(--accent);
@@ -156,43 +155,6 @@ nav {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  font-size: 0.9rem; /* Added font-size */
-}
-
-/* ADD these new link styles */
-.contact-info a {
-  color: var(--white) !important;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-}
-
-/* Unified hover effect for both buttons */
-.resume-btn:hover, .submit-btn:hover {
-  color: var(--black);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(210, 180, 140, 0.3);
-}
-
-/* Matching ::before animation speed (0.4s) */
-.resume-btn::before, .submit-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--accent);
-  transition: width 0.4s ease; /* Now identical for both buttons */
-  z-index: -1;
-}
-
-.resume-btn:hover::before, .submit-btn:hover::before {
-  width: 100%;
 }
 
 /* ===== TIMELINE (EXPERIENCE/EDUCATION) ===== */
@@ -269,21 +231,6 @@ nav {
   gap: 4rem;
 }
 
-a[href^="mailto:"] {
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-
-/* Final, absolute button size fix */
-.contact-form button[type="submit"].submit-btn {
-  padding: 0.6rem 1.2rem !important;
-  font-size: 0.9rem !important;
-  min-width: auto !important;
-  width: auto !important;
-  height: auto !important;
-  line-height: 1 !important;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -313,15 +260,47 @@ a[href^="mailto:"] {
   min-height: 150px;
 }
 
-/* Contact links - specific and efficient */
+/* ===== FIXED CONTACT LINKS ===== */
 .contact-info a {
   color: var(--white) !important;
   text-decoration: none !important;
+  display: inline-block;
 }
 
 .contact-info a:hover {
   text-decoration: underline !important;
   text-decoration-color: var(--accent) !important;
+}
+
+/* Specific fix for mailto link */
+a[href="mailto:aryanrajguru.2016@gmail.com"] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* ===== FIXED SUBMIT BUTTON ===== */
+form.contact-form button.submit-btn {
+  all: unset;
+  display: inline-block !important;
+  padding: 0.6rem 1.2rem !important;
+  font-size: 0.9rem !important;
+  background: transparent !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 50px !important;
+  cursor: pointer !important;
+  transition: all 0.4s ease !important;
+  box-sizing: border-box !important;
+  height: auto !important;
+  width: auto !important;
+  line-height: normal !important;
+}
+
+form.contact-form button.submit-btn:hover {
+  color: var(--black) !important;
+  background: var(--accent) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 4px 8px rgba(210, 180, 140, 0.3) !important;
 }
 
 /* ===== SCROLL ANIMATIONS ===== */
@@ -334,8 +313,6 @@ a[href^="mailto:"] {
   margin: 0 auto;
 }
 
-/* Add this to make submit button smaller */
-
 .section.visible {
   opacity: 1;
   transform: translateY(0);
@@ -343,7 +320,6 @@ a[href^="mailto:"] {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-  /* Switch grids to single column */
   .about-grid, .education-container, 
   .projects-grid, .achievements-grid,
   .contact-container {
@@ -351,17 +327,14 @@ a[href^="mailto:"] {
     gap: 2rem;
   }
 
-  /* Adjust typography */
   h2 { font-size: 2rem; }
   h3 { font-size: 1.5rem; }
 
-  /* Stack nav items */
   nav { flex-direction: column; }
   .nav-right { margin-top: 1.5rem; }
   .nav-right a { margin: 0 1rem 0 0; }
 }
 
-/* Accessibility: Disable animations for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
