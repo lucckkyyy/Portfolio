@@ -142,19 +142,33 @@ nav {
 }
 
 /* ===== BUTTON STYLES (RESUME & SUBMIT) ===== */
+/* ADD these new button styles */
 .resume-btn, .submit-btn {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.2rem; /* Smaller padding */
   background: transparent;
   color: var(--accent);
   border: 1px solid var(--accent);
   text-decoration: none;
-  transition: all 0.4s ease; /* Changed from 0.3s to 0.4s to match submit-btn */
+  transition: all 0.4s ease;
   border-radius: 50px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  font-size: 0.9rem; /* Added font-size */
+}
+
+/* ADD these new link styles */
+.contact-info a {
+  color: var(--white) !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 
 /* Unified hover effect for both buttons */

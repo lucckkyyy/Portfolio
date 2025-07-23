@@ -1,0 +1,72 @@
+
+
+
+
+
+Hi, I am Aryan, an IT Specialist majoring in Computer Science and Engineering Technology with a passion for Software development and IT Management.
+
+About me-
+I work as an IT Assistant at the University of Toledo Medical Campus, where I manage software and hardware-related issues, optimize workflows, and ensure secure, efficient technology operations. I also configure and image computers, set up institutional policies, and maintain system reliability across departments. My technical skills include Python, Java, Flutter, and cloud technologies like AWS and Firebase, and I have built projects such as a cross-platform task management app, an AI-based email classifier, and an autonomous navigation robot. I am interested in prompt engineering, software engineering, and artificial intelligence, with a strong focus on developing intelligent and scalable solutions.
+
+
+
+Education-
+The University of Toledo | Anticipated May 2027
+B.S. in Computer Science and Engineering Technology
+
+Key Highlights
+Dean's List recipient
+AI/ML Club & ACM Chapter member
+Amazon DeepRacer AI/ML Competition representative
+
+
+
+Experience- 
+IT Assistant @ University of Toledo
+2022 - Present
+
+Reduced ticket backlog by 40%
+Decreased escalations by 50%
+Hardware/software deployment
+
+
+Projects-
+
+TaskSync
+Flutter • Firebase
+
+Cross-platform task manager with real-time sync
+
+AI Car Robot
+TensorFlow • OpenCV
+
+95% obstacle detection accuracy
+
+
+
+Achievements-
+
+Certifications
+AWS Solutions Architecture
+Generative AI
+Front-End Development
+Awards
+Dean's List
+Rocket Award Scholarship
+Amazon DeepRacer
+
+
+
+Contact Me- 
+
+Get in Touch
+Let's start a conversation!
+Your Name
+Your Email
+Your Message
+Send Message
+LinkedIn: linkedin.com/in/aryanrajguru
+
+Email: aryanrajguru.2016@gmail.com
+
+Phone: (937) 243-5219
