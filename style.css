@@ -10,7 +10,7 @@
 body {
   background-color: var(--black);
   color: var(--white);
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", Arial, sans-serif;
   margin: 0;
   line-height: 1.6;
 }
@@ -282,7 +282,7 @@ form.contact-form button.submit-btn:active {
   padding: 0.8rem;
   margin-bottom: 1rem;
   color: var(--white);
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 1rem;
   transition: all 0.3s;
 }
