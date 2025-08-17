@@ -262,6 +262,51 @@ form.contact-form button.submit-btn:active {
   );
 }
 
+/* ===== CERTIFICATE LINKS (matching contact links) ===== */
+.certifications-list {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.certifications-list li {
+  position: relative;
+  margin-bottom: 0.7rem;
+}
+
+.certifications-list li::before {
+  content: '▹';
+  position: absolute;
+  left: -1.5rem;
+  color: var(--accent);
+  font-size: 1.1em;
+}
+
+.cert-link {
+  color: var(--white);
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.cert-link:hover {
+  color: var(--accent) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--accent) !important;
+}
+
+.link-icon {
+  font-size: 0.75em;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.cert-link:hover .link-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
 /* ===== CONTACT FORM ===== */
 .contact-container {
   display: grid;
