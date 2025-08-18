@@ -221,6 +221,27 @@ form.contact-form button.submit-btn:active {
   box-shadow: 0 0 0 4px rgba(210, 180, 140, 0.1);
 }
 
+/* NEW: Job Title + Date on same line */
+.timeline-item h3 {
+  display: flex;
+  justify-content: space-between; /* Pushes date to right */
+  align-items: baseline;
+  margin-bottom: 0.5rem; /* Space before description */
+}
+
+/* NEW: Date styling */
+.timeline-item .date {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* Description below title (no indentation) */
+.timeline-item p {
+  margin-top: 0;
+  width: 100%;
+}
+
 .timeline-item:hover::before {
   box-shadow: 0 0 0 6px rgba(210, 180, 140, 0.2);
   transform: scale(1.1);
@@ -260,6 +281,19 @@ form.contact-form button.submit-btn:active {
     rgba(210, 180, 140, 0.03),
     rgba(0, 0, 0, 0.3)
   );
+}
+
+/* ===== PROJECT BULLETS (Match Achievements) ===== */
+.project-card p {
+  position: relative;
+  padding-left: 1.5rem; /* Space for bullet */
+}
+
+.project-card p::before {
+  content: '▹'; /* Same bullet as achievements */
+  position: absolute;
+  left: 0;
+  color: var(--accent);
 }
 
 /* ===== CERTIFICATE LINKS (matching contact links) ===== */
@@ -307,8 +341,10 @@ form.contact-form button.submit-btn:active {
   transform: translate(2px, -2px);
 }
 
+
+
 /* ===== MATCHING BULLET POINTS FOR BOTH SECTIONS ===== */
-.awards-list {
+.awards-list project-card {
   list-style: none;
   padding-left: 1.5rem;
 }
