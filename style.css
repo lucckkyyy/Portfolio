@@ -308,18 +308,18 @@ form.contact-form button.submit-btn:active {
 }
 
 /* ===== MATCHING BULLET POINTS FOR BOTH SECTIONS ===== */
-.awards-list project-card {
+.awards-list {
   list-style: none;
   padding-left: 1.5rem;
 }
 
-.awards-list project-card li {
+.awards-list li {
   position: relative;
   margin-bottom: 0.7rem;
 }
 
 /* Same ▹ bullet as certificates */
-.awards-list project-card li::before {
+.awards-list li::before {
   content: '▹';
   position: absolute;
   left: -1.5rem;
