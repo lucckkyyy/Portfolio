@@ -485,23 +485,6 @@ form.contact-form button.submit-btn {
   background: rgba(255,0,0,0.1) !important; /* Semi-transparent red */
 }
 
-/* COMPLETE BUTTON RESET */
-form.contact-form button.submit-btn {
-  all: unset; /* Remove ALL default styles */
-  /* Now reapply EXACT resume-btn styles */
-  display: inline-block;
-  padding: 0.6rem 1.5rem;
-  min-width: 160px;
-  box-sizing: content-box;
-  text-align: center;
-  /* Your existing styles below... */
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 50px;
-  /* ...keep all other existing styles */
-}
-
 /* ===== FIXED CONTACT LINKS ===== */
 .contact-info a {
   color: var(--white) !important;
