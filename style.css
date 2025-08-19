@@ -478,19 +478,28 @@ form.contact-form button.submit-btn:active {
 }
 
 /* Send Message button same as Download Resume button */
-/* Reset button defaults completely */
-form.contact-form button.submit-btn {
-  padding: 0.6rem 1.5rem !important; /* Force identical padding */
-  margin: 0 !important; /* Remove default button margins */
-  box-sizing: content-box; /* Match <a> tag behavior */
-  width: auto; /* Prevent forced width */
-}
-
-/* Ensure both use identical box models */
+/* TEMPORARY DEBUG STYLES */
 .resume-btn, 
 form.contact-form button.submit-btn {
+  outline: 2px solid red !important; /* Highlight buttons */
+  background: rgba(255,0,0,0.1) !important; /* Semi-transparent red */
+}
+
+/* COMPLETE BUTTON RESET */
+form.contact-form button.submit-btn {
+  all: unset; /* Remove ALL default styles */
+  /* Now reapply EXACT resume-btn styles */
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
   min-width: 160px;
-  line-height: normal; /* Reset line-height */
+  box-sizing: content-box;
+  text-align: center;
+  /* Your existing styles below... */
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 50px;
+  /* ...keep all other existing styles */
 }
 
 /* ===== FIXED CONTACT LINKS ===== */
