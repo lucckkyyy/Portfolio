@@ -321,9 +321,6 @@ form.contact-form button.submit-btn:active {
   padding-left: 1.8rem; /* Aligns with bullet point */
 }
 
-
-
-
 /* ===== PROJECTS & ACHIEVEMENTS CARDS ===== */
 .project-card, .achievement-card,
 .education-main, .education-highlights {
@@ -478,6 +475,14 @@ form.contact-form button.submit-btn:active {
 
 .contact-form textarea {
   min-height: 150px;
+}
+
+/* Send Message button same as Download Resume button */
+.resume-btn, 
+form.contact-form button.submit-btn {
+  min-width: 160px; /* Match width (adjust as needed) */
+  box-sizing: border-box; /* Prevent padding/border from expanding size */
+  text-align: center; /* Ensure text alignment is consistent */
 }
 
 /* ===== FIXED CONTACT LINKS ===== */
