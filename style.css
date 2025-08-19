@@ -269,11 +269,8 @@ form.contact-form button.submit-btn:active {
   text-decoration-color: var(--accent);
 }
 
-.timeline-header {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.2rem; /* Reduced from 0.5rem */
+.timeline-item p {
+  margin-top: 0.2rem; /* Add this if you prefer to control from the paragraph */
 }
 
 /* Remove the circle bullet */
