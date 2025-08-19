@@ -70,11 +70,7 @@
         <span class="education-bullet">▹</span>
         <h3>Key Highlights</h3>
       </div>
-      <p>Gained a solid foundation in Software Engineering and IT principles and hands-on experience across areas like programming, and network management.
-        The program's focus on practical learning allowed me to work directly with industry-standard tools and collaborate on real-world projects, preparing 
-        me to tackle complex IT challenges confidently. Through coursework in Software Design, Web Server Administration, Operating Systems, Client-Server Computing,
-        I have built a strong technical skill set. In addition to technical expertise, I developed leadership and teamwork abilities through active involvement in 
-        professional organizations like AIML and ACM Club on-campus.</p>
+      <p>Gained a solid foundation in Software Engineering and IT principles and hands-on experience across areas like programming, and network management. The program's focus on practical learning allowed me to work directly with industry-standard tools and collaborate on real-world projects, preparing me to tackle complex IT challenges confidently. Through coursework in Software Design, Web Server Administration, Operating Systems, Client-Server Computing, I have built a strong technical skill set. In addition to technical expertise, I developed leadership and teamwork abilities through active involvement in professional organizations like AIML and ACM Club on-campus.</p>
     </div>
   </div>
 </section>
@@ -188,3 +184,33 @@
       </div>
     </section>
   </main>
+
+  <script>
+    // Scroll reveal animation
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Hover effects
+    document.querySelectorAll('.project-card, .achievement-card, .timeline-item').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-5px)';
+        item.style.boxShadow = '0 10px 20px rgba(210, 180, 140, 0.1)';
+      });
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+        item.style.boxShadow = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
