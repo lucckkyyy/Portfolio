@@ -221,47 +221,6 @@ form.contact-form button.submit-btn:active {
   box-shadow: 0 0 0 4px rgba(210, 180, 140, 0.1);
 }
 
-/* ===== TIMELINE FIX ===== */
-.timeline-item h3 {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-item .date {
-  color: var(--accent);
-  font-size: 1rem;
-  font-weight: normal;
-  margin-left: 1rem;
-}
-
-.timeline-item p {
-  margin-top: 0;
-  padding-left: 0 !important; /* Removes bullet indent */
-}
-
-/* NEW: Job Title + Date on same line */
-.timeline-item h3 {
-  display: flex;
-  justify-content: space-between; /* Pushes date to right */
-  align-items: baseline;
-  margin-bottom: 0.5rem; /* Space before description */
-}
-
-/* NEW: Date styling */
-.timeline-item .date {
-  color: var(--accent);
-  font-size: 1rem;
-  font-weight: normal;
-}
-
-/* Description below title (no indentation) */
-.timeline-item p {
-  margin-top: 0;
-  width: 100%;
-}
-
 .timeline-item:hover::before {
   box-shadow: 0 0 0 6px rgba(210, 180, 140, 0.2);
   transform: scale(1.1);
@@ -348,10 +307,8 @@ form.contact-form button.submit-btn:active {
   transform: translate(2px, -2px);
 }
 
-
-
 /* ===== MATCHING BULLET POINTS FOR BOTH SECTIONS ===== */
-.awards-list project-card {
+.awards-list {
   list-style: none;
   padding-left: 1.5rem;
 }
