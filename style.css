@@ -269,6 +269,13 @@ form.contact-form button.submit-btn:active {
   text-decoration-color: var(--accent);
 }
 
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.2rem; /* Reduced from 0.5rem */
+}
+
 /* Remove the circle bullet */
 .timeline-item::before {
   display: none;
