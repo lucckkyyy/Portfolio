@@ -262,6 +262,20 @@ form.contact-form button.submit-btn:active {
   );
 }
 
+/* ===== Project Title Bullets ===== */
+.project-card h3 {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.project-card h3::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.1em;
+}
+
 /* ===== CERTIFICATE LINKS (matching contact links) ===== */
 .certifications-list {
   list-style: none;
