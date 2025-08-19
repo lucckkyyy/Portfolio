@@ -478,11 +478,11 @@ form.contact-form button.submit-btn:active {
 }
 
 /* Send Message button same as Download Resume button */
-/* TEMPORARY DEBUG STYLES */
 .resume-btn, 
 form.contact-form button.submit-btn {
-  outline: 2px solid red !important; /* Highlight buttons */
-  background: rgba(255,0,0,0.1) !important; /* Semi-transparent red */
+  min-width: 160px; /* Match width (adjust as needed) */
+  box-sizing: border-box; /* Prevent padding/border from expanding size */
+  text-align: center; /* Ensure text alignment is consistent */
 }
 
 /* ===== FIXED CONTACT LINKS ===== */
