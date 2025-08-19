@@ -278,6 +278,52 @@ form.contact-form button.submit-btn:active {
   display: none;
 }
 
+
+
+/* ===== Education Header Styles ===== */
+.education-header, .highlights-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.education-bullet {
+  color: var(--accent);
+  font-size: 1.4em;
+}
+
+.education-date {
+  margin-left: auto;
+  margin-right: 20px;
+  color: var(--cream);
+  font-size: 0.9em;
+}
+
+/* Existing education container styles */
+.education-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.education-main, .education-highlights {
+  padding: 2rem;
+  border: 1px solid rgba(210, 180, 140, 0.2);
+  border-radius: 12px;
+  background: rgba(210, 180, 140, 0.03);
+}
+
+/* Paragraph alignment */
+.education-main p, 
+.education-highlights p {
+  margin-top: 0;
+  padding-left: 1.8rem; /* Aligns with bullet point */
+}
+
+
+
+
 /* ===== PROJECTS & ACHIEVEMENTS CARDS ===== */
 .project-card, .achievement-card,
 .education-main, .education-highlights {
