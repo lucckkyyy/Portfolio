@@ -235,6 +235,31 @@ form.contact-form button.submit-btn:active {
   color: var(--accent);
 }
 
+
+/* ===== Updated Timeline Styles ===== */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-bullet {
+  color: var(--accent);
+  font-size: 1.4em;
+}
+
+.timeline-date {
+  margin-left: auto;
+  color: var(--cream);
+  font-size: 0.9em;
+}
+
+/* Remove the circle bullet */
+.timeline-item::before {
+  display: none;
+}
+
 /* ===== PROJECTS & ACHIEVEMENTS CARDS ===== */
 .project-card, .achievement-card,
 .education-main, .education-highlights {
@@ -263,14 +288,13 @@ form.contact-form button.submit-btn:active {
 }
 
 /* ===== Project Title Bullets ===== */
-.project-card .project-title {
+.project-title {
   position: relative;
   padding-left: 1.8rem;
-  font-size: 1.8rem;
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
 }
 
-.project-card .project-title::before {
+.project-title::before {
   content: '▹';
   position: absolute;
   left: 0;
