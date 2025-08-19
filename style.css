@@ -242,6 +242,7 @@ form.contact-form button.submit-btn:active {
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 0.5rem;
+  position: relative;
 }
 
 .timeline-bullet {
@@ -251,8 +252,21 @@ form.contact-form button.submit-btn:active {
 
 .timeline-date {
   margin-left: auto;
+  margin-right: 20px; /* Added to move date left */
   color: var(--cream);
   font-size: 0.9em;
+}
+
+/* Style for university link */
+.timeline-header a.accent {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.timeline-header a.accent:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 
 /* Remove the circle bullet */
