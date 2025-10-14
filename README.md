@@ -48,4 +48,4 @@ This portfolio represents **months of dedicated practice** where I moved from ba
 
 ---
 
-*This website showcases my growth in web development through practical, project-based learning and continuous refinement.*
+*Author: Aryan Rajguru*
