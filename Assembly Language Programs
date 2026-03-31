@@ -1,0 +1,71 @@
+/******************************************************************************
+ * Program: Arithmetic Operations with Inline Assembly
+ * Description: This program accepts two integers from the user and performs
+ *              addition, subtraction, and multiplication using both C code
+ *              and inline assembly. It then displays the results from both
+ *              approaches for comparison.
+ * Author: Student
+ * Date: Current Date
+ * Version: 1.0
+ ******************************************************************************/
+
+#include <stdio.h>
+
+int main() {
+    // Variable declarations
+    int num1, num2;                    // Input numbers from user
+    int c_sum, c_diff, c_product;      // Results using C operations
+    int asm_sum, asm_diff, asm_product; // Results using assembly operations
+
+    // Prompt user for input
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Calculate using C operations
+    c_sum = num1 + num2;               // Addition using C
+    c_diff = num1 - num2;              // Subtraction using C
+    c_product = num1 * num2;           // Multiplication using C
+
+    // Calculate using inline assembly
+    __asm__ (
+        // Addition: result = num1 + num2
+        "movl %1, %%eax\n\t"           // Move num1 to EAX register
+        "addl %2, %%eax\n\t"           // Add num2 to EAX
+        "movl %%eax, %0\n\t"           // Move result from EAX to asm_sum
+        : "=r" (asm_sum)               // Output operand
+        : "r" (num1), "r" (num2)       // Input operands
+        : "%eax"                       // Clobbered register
+    );
+
+    __asm__ (
+        // Subtraction: result = num1 - num2
+        "movl %1, %%eax\n\t"           // Move num1 to EAX register
+        "subl %2, %%eax\n\t"           // Subtract num2 from EAX
+        "movl %%eax, %0\n\t"           // Move result from EAX to asm_diff
+        : "=r" (asm_diff)              // Output operand
+        : "r" (num1), "r" (num2)       // Input operands
+        : "%eax"                       // Clobbered register
+    );
+
+    __asm__ (
+        // Multiplication: result = num1 * num2
+        "movl %1, %%eax\n\t"           // Move num1 to EAX register
+        "imull %2, %%eax\n\t"          // Multiply EAX by num2
+        "movl %%eax, %0\n\t"           // Move result from EAX to asm_product
+        : "=r" (asm_product)           // Output operand
+        : "r" (num1), "r" (num2)       // Input operands
+        : "%eax"                       // Clobbered register
+    );
+
+    // Display results from C operations
+    printf("\nUsing C:\n");
+    printf("Sum: %d, Difference: %d, Product: %d\n", 
+           c_sum, c_diff, c_product);
+
+    // Display results from assembly operations
+    printf("\nUsing Inline Assembly:\n");
+    printf("Sum: %d, Difference: %d, Product: %d\n", 
+           asm_sum, asm_diff, asm_product);
+
+    return 0;                          // Program executed successfully
+}
