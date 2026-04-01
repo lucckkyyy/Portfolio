@@ -224,18 +224,29 @@ Computer Networks & Data Communication, Financial Analysis.</p>
   </main>
 
   <script>
-    // Typing effect
+
+      // Typing effect with cursor
     const typingText = document.getElementById('typing-text');
     const text = 'Hello World';
     let i = 0;
+    typingText.textContent = '';
+
     function typeWriter() {
       if (i < text.length) {
-      typingText.textContent += text.charAt(i);
-      i++;
-    setTimeout(typeWriter, 100);
+        typingText.textContent = text.substring(0, i + 1) + '|';
+        i++;
+        setTimeout(typeWriter, 120);
+      } else {
+        // Blink cursor after done typing
+        let visible = true;
+        setInterval(() => {
+          typingText.textContent = visible ? text + '|' : text;
+          visible = !visible;
+        }, 500);
       }
     }
-    typeWriter();
+
+    setTimeout(typeWriter, 300);
     
     // Smooth scroll reveal with directions
     const revealElements = document.querySelectorAll('.section');
