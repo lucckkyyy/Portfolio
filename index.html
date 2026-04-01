@@ -224,48 +224,52 @@ Computer Networks & Data Communication, Financial Analysis.</p>
   </main>
 
   <script>
-    
-      // Typing effect with blinking cursor then page load
+
       const typingText = document.getElementById('typing-text');
-      const text = 'Hello World';
-      let i = 0;
-      typingText.textContent = '|';
+const introAnimation = document.querySelector('.intro-animation');
+const text = 'Hello World';
+let i = 0;
+typingText.textContent = '|';
 
-      // Blink cursor before typing starts
-      let blinkCount = 0;
-      let visible = true;
-      const preBlink = setInterval(() => {
-        typingText.textContent = visible ? '|' : '';
-        visible = !visible;
-        blinkCount++;
-        if (blinkCount >= 6) {
-          clearInterval(preBlink);
-          typingText.textContent = '';
-          setTimeout(typeWriter, 200);
-        }
-      }, 300);
+// Blink before typing
+let blinkCount = 0;
+let visible = true;
+const preBlink = setInterval(() => {
+  typingText.textContent = visible ? '|' : '';
+  visible = !visible;
+  blinkCount++;
+  if (blinkCount >= 4) {
+    clearInterval(preBlink);
+    typingText.textContent = '';
+    setTimeout(typeWriter, 200);
+  }
+}, 300);
 
-      function typeWriter() {
-        if (i < text.length) {
-          typingText.textContent = text.substring(0, i + 1) + '|';
-          i++;
-          setTimeout(typeWriter, 120);
-        } else {
-          // Blink cursor after typing done, then load page
-          let postBlink = 0;
-          let v = true;
-          const afterBlink = setInterval(() => {
-            typingText.textContent = v ? text + '|' : text;
-            v = !v;
-            postBlink++;
-            if (postBlink >= 4) {
-              clearInterval(afterBlink);
-              typingText.textContent = text;
-            }
-          }, 300);
-        }
+function typeWriter() {
+  if (i < text.length) {
+    typingText.textContent = text.substring(0, i + 1) + '|';
+    i++;
+    setTimeout(typeWriter, 120);
+  } else {
+    // Blink after typing, then fade out
+    let postBlink = 0;
+    let v = true;
+    const afterBlink = setInterval(() => {
+      typingText.textContent = v ? text + '|' : text;
+      v = !v;
+      postBlink++;
+      if (postBlink >= 6) {
+        clearInterval(afterBlink);
+        // NOW fade out the intro
+        introAnimation.style.transition = 'opacity 0.8s ease';
+        introAnimation.style.opacity = '0';
+        setTimeout(() => {
+          introAnimation.style.visibility = 'hidden';
+        }, 800);
       }
-    
+    }, 300);
+  }
+}
     // Smooth scroll reveal with directions
     const revealElements = document.querySelectorAll('.section');
     const revealObserver = new IntersectionObserver((entries) => {
