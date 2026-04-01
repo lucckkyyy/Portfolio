@@ -28,7 +28,7 @@ body {
   align-items: center;
   background: var(--black);
   z-index: 100;
-  animation: fadeOut 0.8s 1.5s forwards;
+  animation: fadeOut 0.8s 0.8s forwards;
 }
 
 .hello-world {
@@ -36,7 +36,7 @@ body {
   font-weight: 700;
   margin-bottom: 2rem;
   opacity: 0;
-  animation: fadeIn 0.8s 0.2s forwards;
+  animation: fadeIn 0.8s 1.2s forwards;
   color: var(--accent);
 }
 
