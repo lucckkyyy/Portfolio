@@ -36,6 +36,8 @@ body {
   font-weight: 700;
   margin-bottom: 2rem;
   color: var(--accent);
+  opacity: 1;
+  min-height: 1.2em;
 }
 
 .intro-line {
@@ -169,6 +171,9 @@ form.contact-form button.submit-btn:hover::before {
 .resume-btn:active, 
 form.contact-form button.submit-btn:active {
   transform: translateY(-1px) scale(0.98);
+}
+form.contact-form button.submit-btn {
+  align-self: flex-start;
 }
 
 /* ===== ABOUT SECTION ===== */
