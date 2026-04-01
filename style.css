@@ -1,8 +1,8 @@
 /* ===== BASE STYLES & VARIABLES ===== */
 :root {
   --black: #000000;
-  --accent: #D2B48C; /* Primary accent color (tan) */
-  --cream: #F5F5DC;  /* Secondary accent (cream) */
+  --accent: #D2B48C;
+  --cream: #F5F5DC;
   --white: #FFFFFF;
 }
 
@@ -29,6 +29,7 @@ body {
   background: var(--black);
   z-index: 100;
   animation: fadeOut 0.8s 0.8s forwards;
+  animation: fadeOut 0.8s 3s forwards;
 }
 
 .hello-world {
@@ -38,6 +39,8 @@ body {
   opacity: 0;
   animation: fadeIn 0.8s 1.2s forwards;
   color: var(--accent);
+  opacity: 1;
+  min-height: 1.2em;
 }
 
 .intro-line {
@@ -55,12 +58,11 @@ body {
 /* ===== LAYOUT & TYPOGRAPHY ===== */
 main {
   opacity: 0;
-  animation: fadeInMain 0.8s 2s forwards;
+  animation: fadeInMain 0.8s 3.5s forwards;
 }
 
 @keyframes fadeInMain { to { opacity: 1; } }
 
-/* Section headings with underline */
 h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -104,7 +106,6 @@ nav {
   position: relative;
 }
 
-/* Hover underline effect */
 .nav-right a:after {
   content: '';
   position: absolute;
@@ -118,7 +119,16 @@ nav {
 
 .nav-right a:hover:after { width: 100%; }
 
-/* ===== BEAUTIFUL MATCHING BUTTONS ===== */
+/* Active nav link */
+.nav-right a.active {
+  color: var(--accent);
+}
+
+.nav-right a.active:after {
+  width: 100%;
+}
+
+/* ===== BUTTONS ===== */
 .resume-btn, form.contact-form button.submit-btn {
   display: inline-block;
   padding: 0.6rem 1.5rem;
@@ -138,14 +148,12 @@ nav {
   text-align: center;
 }
 
-/* Gorgeous hover effects */
 .resume-btn:hover, form.contact-form button.submit-btn:hover {
   color: var(--black);
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(210, 180, 140, 0.3);
 }
 
-/* Fancy fill animation */
 .resume-btn::before, form.contact-form button.submit-btn::before {
   content: '';
   position: absolute;
@@ -163,10 +171,14 @@ form.contact-form button.submit-btn:hover::before {
   width: 100%;
 }
 
-/* Click effect */
 .resume-btn:active, 
 form.contact-form button.submit-btn:active {
   transform: translateY(-1px) scale(0.98);
+}
+
+form.contact-form button.submit-btn {
+  align-self: flex-start;
+  width: fit-content;
 }
 
 /* ===== ABOUT SECTION ===== */
@@ -192,10 +204,7 @@ form.contact-form button.submit-btn:active {
   transform: scale(1.02);
 }
 
-/* ===== BUTTON STYLES ===== */
-
-
-/* ===== TIMELINE (EXPERIENCE/EDUCATION) ===== */
+/* ===== TIMELINE (EXPERIENCE) ===== */
 .timeline {
   position: relative;
   padding-left: 2rem;
@@ -204,39 +213,24 @@ form.contact-form button.submit-btn:active {
 
 .timeline-item {
   position: relative;
-  padding: 0 0 2.5rem 2rem;
-  transition: all 0.3s ease;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(210, 180, 140, 0.2);
+  border-radius: 12px;
+  background: rgba(210, 180, 140, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Timeline dot */
 .timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -0.5rem;
-  top: 0.4rem;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(210, 180, 140, 0.1);
+  display: none;
 }
 
-.timeline-item:hover::before {
-  box-shadow: 0 0 0 6px rgba(210, 180, 140, 0.2);
-  transform: scale(1.1);
+.timeline-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 8px 20px rgba(210, 180, 140, 0.1);
 }
 
-/* List items with custom bullet */
-.timeline-item li::before, 
-.education-highlights li::before {
-  content: '▹';
-  position: absolute;
-  left: -1.5rem;
-  color: var(--accent);
-}
-
-
-/* ===== Updated Timeline Styles ===== */
 .timeline-header {
   display: flex;
   align-items: center;
@@ -252,12 +246,11 @@ form.contact-form button.submit-btn:active {
 
 .timeline-date {
   margin-left: auto;
-  margin-right: 20px; /* Added to move date left */
+  margin-right: 20px;
   color: var(--cream);
   font-size: 0.9em;
 }
 
-/* Style for university link */
 .timeline-header a.accent {
   color: var(--accent);
   text-decoration: none;
@@ -270,17 +263,18 @@ form.contact-form button.submit-btn:active {
 }
 
 .timeline-item p {
-  margin-top: 0.2rem; /* Add this if you prefer to control from the paragraph */
+  margin-top: 0.2rem;
 }
 
-/* Remove the circle bullet */
-.timeline-item::before {
-  display: none;
+.timeline-item li::before, 
+.education-highlights li::before {
+  content: '▹';
+  position: absolute;
+  left: -1.5rem;
+  color: var(--accent);
 }
 
-
-
-/* ===== Education Header Styles ===== */
+/* ===== EDUCATION ===== */
 .education-header, .highlights-header {
   display: flex;
   align-items: center;
@@ -301,7 +295,6 @@ form.contact-form button.submit-btn:active {
   font-size: 0.9em;
 }
 
-/* Existing education container styles */
 .education-container {
   display: grid;
   gap: 2rem;
@@ -314,15 +307,11 @@ form.contact-form button.submit-btn:active {
   background: rgba(210, 180, 140, 0.03);
 }
 
-/* Paragraph alignment */
 .education-main p, 
 .education-highlights p {
   margin-top: 0;
-  padding-left: 1.8rem; /* Aligns with bullet point */
+  padding-left: 1.8rem;
 }
-
-
-
 
 /* ===== PROJECTS & ACHIEVEMENTS CARDS ===== */
 .project-card, .achievement-card,
@@ -334,7 +323,6 @@ form.contact-form button.submit-btn:active {
   background: rgba(210, 180, 140, 0.03);
 }
 
-/* Card hover effects */
 .project-card:hover, .achievement-card:hover,
 .education-main:hover, .education-highlights:hover {
   transform: translateY(-5px);
@@ -342,7 +330,6 @@ form.contact-form button.submit-btn:active {
   box-shadow: 0 8px 20px rgba(210, 180, 140, 0.1);
 }
 
-/* Project-specific gradient */
 .project-card {
   background: linear-gradient(
     to bottom right,
@@ -351,7 +338,6 @@ form.contact-form button.submit-btn:active {
   );
 }
 
-/* ===== Project Title Bullets ===== */
 .project-title {
   position: relative;
   padding-left: 1.8rem;
@@ -368,7 +354,7 @@ form.contact-form button.submit-btn:active {
   transform: translateY(-50%);
 }
 
-/* ===== CERTIFICATE LINKS (matching contact links) ===== */
+/* ===== CERTIFICATE LINKS ===== */
 .certifications-list {
   list-style: none;
   padding-left: 1.5rem;
@@ -413,7 +399,7 @@ form.contact-form button.submit-btn:active {
   transform: translate(2px, -2px);
 }
 
-/* ===== MATCHING BULLET POINTS FOR BOTH SECTIONS ===== */
+/* ===== AWARDS ===== */
 .awards-list {
   list-style: none;
   padding-left: 1.5rem;
@@ -424,18 +410,6 @@ form.contact-form button.submit-btn:active {
   margin-bottom: 0.7rem;
 }
 
-/* ===== Ensure awards use same bullets as certs ===== */
-.awards-list {
-  list-style: none;
-  padding-left: 1.5rem;
-}
-
-.awards-list li {
-  position: relative;
-  margin-bottom: 0.7rem;
-}
-
-/* Matching certificate bullets */
 .awards-list li::before {
   content: '▹';
   position: absolute;
@@ -480,7 +454,6 @@ form.contact-form button.submit-btn:active {
   min-height: 150px;
 }
 
-/* ===== FIXED CONTACT LINKS ===== */
 .contact-info a {
   color: var(--white) !important;
   text-decoration: none !important;
@@ -492,7 +465,6 @@ form.contact-form button.submit-btn:active {
   text-decoration-color: var(--accent) !important;
 }
 
-/* Specific fix for mailto link */
 a[href="mailto:aryanrajguru.2016@gmail.com"] {
   pointer-events: auto !important;
   cursor: pointer !important;
@@ -501,8 +473,8 @@ a[href="mailto:aryanrajguru.2016@gmail.com"] {
 /* ===== SCROLL ANIMATIONS ===== */
 .section {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 6rem 5vw;
   max-width: 1200px;
   margin: 0 auto;
@@ -511,6 +483,19 @@ a[href="mailto:aryanrajguru.2016@gmail.com"] {
 .section.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== CURSOR GLOW ===== */
+.cursor-glow {
+  position: fixed;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(210, 180, 140, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: left 0.1s ease, top 0.1s ease;
+  z-index: 0;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */

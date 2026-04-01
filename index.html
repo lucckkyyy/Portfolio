@@ -14,8 +14,9 @@
 <body>
   <!-- Animated Intro -->
   <div class="intro-animation">
-    <div class="hello-world">Hello World</div>
+    <div class="hello-world" id="typing-text"></div>
     <div class="intro-line"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
   </div>
 
   <!-- Main Content -->
@@ -40,7 +41,7 @@
         <div class="about-text">
           <h2>ABOUT ME</h2> <br>
           <h3>Who Am I?</h3>
-          <p>Hi, I am Aryan Rajguru, an IT Assistant majoring in Computer Science & Engineering Technology at the University of Toledo with a passion for building intelligent, scalable software.</p>
+          <p>Hey! I am Aryan Rajguru, welcome to my website! I am an IT Assistant majoring in Computer Science & Engineering Technology at the University of Toledo with a passion for building intelligent, scalable software.</p>
           <p>As an IT Assistant, I manage software and hardware-related issues, optimize workflows, and ensure secure, efficient technology operations at the IT Department.
             I also configure and image computers, set up institutional policies, and maintain system reliability across departments. My technical skills include Python, Java,
             JavaScript, HTML5, CSS and cloud technologies like AWS and Firebase, and I have built projects such as a cross-platform task management app, an AI-based Email Classifier,
@@ -123,7 +124,7 @@ Computer Networks & Data Communication, Financial Analysis.</p>
         <a href="https://github.com/lucckkyyy/AquaTrack-Application" target="_blank" class="cert-link">AquaTrack – Smart Hydration App <span class="link-icon">↗</span></a>
       </h3>
       <p class="tech">A cross-platform iOS/Android app that calculates your personalized daily water intake 
-        by pulling real-time weather data — temperature and humidity — via the Open-Meteo API using your 
+        by pulling real-time weather data, temperature and humidity via the Open-Meteo API using your 
         device's GPS. It tracks your hydration history and streaks with local storage, sends smart push 
         notifications based on your schedule and activity, and uses gamification milestones to keep you consistent.</p>
     </div>
@@ -143,7 +144,7 @@ Computer Networks & Data Communication, Financial Analysis.</p>
         <a href="https://github.com/lucckkyyy/NetSimLab-Automated-Subnet-Planner" target="_blank" class="cert-link">NetSimLab – Network Emulation Platform <span class="link-icon">↗</span></a>
       </h3>
       <p class="tech">An automated network lab that spins up multi-subnet Docker environments simulating ARP, 
-        ICMP, and broadcast traffic across 5+ sites with 200+ hosts — eliminating 70% of manual IP planning. 
+        ICMP, and broadcast traffic across 5+ sites with 200+ hosts, eliminating around 70% of manual IP planning. 
         Includes custom packet generation and analysis tools built with Scapy and tcpdump. Full lab deployment 
         takes under 3 minutes from scratch.</p>
     </div>
@@ -223,31 +224,70 @@ Computer Networks & Data Communication, Financial Analysis.</p>
   </main>
 
   <script>
-    // Scroll reveal animation
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+
+    // Typing effect with cursor
+    const typingText = document.getElementById('typing-text');
+    const text = 'Hello World';
+    let i = 0;
+    typingText.textContent = '';
+
+    function typeWriter() {
+      if (i < text.length) {
+        typingText.textContent = text.substring(0, i + 1) + '|';
+        i++;
+        setTimeout(typeWriter, 120);
+      } else {
+        let visible = true;
+        setInterval(() => {
+          typingText.textContent = visible ? text + '|' : text;
+          visible = !visible;
+        }, 500);
+      }
+    }
+
+    setTimeout(typeWriter, 300);
+    
+    // Smooth scroll reveal with directions
+    const revealElements = document.querySelectorAll('.section');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
+        setTimeout(() => {
           entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+            }, index * 100);
+          }
+        });
+      }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+      revealElements.forEach(el => revealObserver.observe(el));
 
-    // Hover effects
-    document.querySelectorAll('.project-card, .achievement-card, .timeline-item').forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-5px)';
-        item.style.boxShadow = '0 10px 20px rgba(210, 180, 140, 0.1)';
+      // Cursor glow
+      const cursorGlow = document.getElementById('cursorGlow');
+      document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
       });
-      item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateY(0)';
-        item.style.boxShadow = 'none';
+
+      // Active nav highlight on scroll
+      const navLinks = document.querySelectorAll('.nav-right a');
+      const sectionIds = ['about', 'education', 'work', 'projects', 'skills', 'achievements', 'contact'];
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sectionIds.forEach(id => {
+          const section = document.getElementById(id);
+          if (section && window.scrollY >= section.offsetTop - 200) {
+            current = id;
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
       });
-    });
   </script>
 </body>
 </html>
