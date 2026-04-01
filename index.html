@@ -14,8 +14,9 @@
 <body>
   <!-- Animated Intro -->
   <div class="intro-animation">
-    <div class="hello-world">Hello World</div>
+    <div class="hello-world" id="typing-text"></div>
     <div class="intro-line"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
   </div>
 
   <!-- Main Content -->
@@ -223,31 +224,80 @@ Computer Networks & Data Communication, Financial Analysis.</p>
   </main>
 
   <script>
-    // Scroll reveal animation
-    const sections = document.querySelectorAll('.section');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+    // Typing effect
+    const typingText = document.getElementById('typing-text');
+    const text = 'Hello World';
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+      typingText.textContent += text.charAt(i);
+      i++;
+    setTimeout(typeWriter, 100);
+      }
+    }
+    typeWriter();
+    
+    // Smooth scroll reveal with directions
+    const revealElements = document.querySelectorAll('.section');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
+        setTimeout(() => {
           entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
+            }, index * 100);
+          }
+        });
+      }, { threshold: 0.1 });
 
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+      revealElements.forEach(el => revealObserver.observe(el));
 
-    // Hover effects
-    document.querySelectorAll('.project-card, .achievement-card, .timeline-item').forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-5px)';
-        item.style.boxShadow = '0 10px 20px rgba(210, 180, 140, 0.1)';
+      // Cursor glow
+      const cursorGlow = document.getElementById('cursorGlow');
+      document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
       });
-      item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateY(0)';
-        item.style.boxShadow = 'none';
+
+    
+      // Card tilt effect
+      document.querySelectorAll('.project-card, .achievement-card, .skill-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const tiltX = ((y - centerY) / centerY) * 6;
+          const tiltY = ((centerX - x) / centerX) * 6;
+          card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-5px)`;
+          card.style.boxShadow = `0 10px 30px rgba(210, 180, 140, 0.15)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+          card.style.boxShadow = 'none';
+        });
       });
-    });
+
+      // Active nav highlight on scroll
+      const navLinks = document.querySelectorAll('.nav-right a');
+      const sectionIds = ['about', 'education', 'work', 'projects', 'skills', 'achievements', 'contact'];
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sectionIds.forEach(id => {
+          const section = document.getElementById(id);
+          if (section && window.scrollY >= section.offsetTop - 200) {
+            current = id;
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
   </script>
 </body>
 </html>
