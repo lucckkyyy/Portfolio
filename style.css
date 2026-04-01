@@ -35,6 +35,7 @@ body {
   font-size: 5vw;
   font-weight: 700;
   margin-bottom: 2rem;
+  opacity: 0;
   color: var(--accent);
 }
 

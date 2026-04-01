@@ -225,7 +225,7 @@ Computer Networks & Data Communication, Financial Analysis.</p>
 
   <script>
 
-      // Typing effect with cursor
+    // Typing effect with cursor
     const typingText = document.getElementById('typing-text');
     const text = 'Hello World';
     let i = 0;
@@ -237,7 +237,6 @@ Computer Networks & Data Communication, Financial Analysis.</p>
         i++;
         setTimeout(typeWriter, 120);
       } else {
-        // Blink cursor after done typing
         let visible = true;
         setInterval(() => {
           typingText.textContent = visible ? text + '|' : text;
